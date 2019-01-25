@@ -9,7 +9,7 @@ class Person {
         this.gender = attributes.gender;
     }
     speak() {
-        console.log(`Hello my name is ${this.name}, I am from ${this.location}.`)
+        console.log(`Hello my name is ${this.name}, I am from ${this.location}`)
     }
 
 }
@@ -25,6 +25,40 @@ class Instructor extends Person {
         console.log(`Today we are learning about ${this.subject}`)
     }
     grade(student, subject) {
-        
+        console.log(`${student.name} receives a perfect score on ${this.subject}`);
+    }
+}
+
+class Student extends Person {
+    constructor(attributes) {
+        super(attributes);
+        this.previousBackground = attributes.previousBackground;
+        this.className = attributes.className;
+        this.favSubjects = attributes.favSubjects;
+    }
+    listSubjects(favSubjects) {
+        for(let i = 0; i < this.favSubjects.length, i++) {
+            console.log(this.favSubjects[i]);
+        }
+    }
+    PRAssignment(subject) {
+        console.log(`${this.name} has submitted a PR for ${subject}`)
+    }
+    sprintChallenge(subject) {
+        console.log(`${this.name} has begun sprint challenge on ${subject}`)
+    }
+}
+
+class ProjectManagers extends Instructor {
+    constructor(attributes) {
+        super(attributes)
+        this.gradClassName = attributes.gradClassName;
+        this.favInstructor = attributes.favInstructor;
+    }
+    standUp(channel) {
+        console.log(`${this.name} announces to ${channel}`);
+    }
+    debugsCode(student, subject) {
+        console.log(`${this.name} debugs ${student.name}'s code on ${subject}`)
     }
 }
